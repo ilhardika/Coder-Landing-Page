@@ -1,0 +1,346 @@
+* {
+    font-family: 'montserrat';
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 48px;
+    margin: 0 0 16px 0;
+}
+
+section {
+    padding: 64px 128px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+p {
+    color: gray;
+    font-size: 20;
+}
+
+nav a {
+    margin-left: 24px;
+}
+
+nav a:hover{
+    color: yellow;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 128px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+#header h1 {
+    margin: 0;
+}
+
+#landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 16px;
+}
+
+#landing h1 {
+    font-size: 40px;
+}
+
+#landing p {
+    margin-bottom: 32px;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    padding: 8px 22px;
+    border: 2px solid yellow;
+}
+
+.btn-alt {
+    background-color: yellow;
+    color: white;
+    margin-left: 16px;
+}
+
+#about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+#about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-top: 72px;
+}
+
+.about-stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-stats-item div{
+    width: 50px;
+    height: 10px;
+    background-color: yellow;
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-header h1 {
+    position: relative;
+}
+/* posisi absolut membutuhkan parent relative agar content menempel */
+
+.service-header h1::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: url("./images/accent1.svg");
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    z-index: -1;
+    /* mengatur layer */
+}
+
+.service-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 88px;
+    margin-top: 48px;
+}
+
+.service-details-items {
+    box-shadow: 2px 4px 4px gray;
+    /* (x axis) (y axis) (ketebalan bayangan) (warna bayangan) */
+}
+
+.service-details-items:hover {
+    transform: scale(1.15);
+}
+
+.service-details-items img {
+    width: 100%;
+}
+
+.service-details-items h2 {
+    padding: 0 16px;
+}
+
+.service-details-items p {
+    font-size: 16px;
+    padding: 0 16px;
+}
+
+#contact h1{
+    position: relative;
+}
+
+#contact > h1::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-image: url("./images/accent2.svg");
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    z-index: -1;
+}
+
+.contact-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 72px;
+}
+
+.contact-detail h1 {
+    font-size: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: solid 3px yellow;
+    padding: 64px 32px;
+    margin: auto;
+}
+
+form button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 12px;
+    margin-top: 24px;
+}
+
+form button:hover {
+    background-color: white;
+    border: 1px solid yellow;
+    color: black;
+    cursor: pointer;
+}
+
+form h1 {
+    text-align: center;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    margin-top: 20px;
+    grid-template-areas:
+    "name subject"
+    "email number"
+    "message message";
+}
+
+#input-name {
+    grid-area: name;
+}
+#input-subject {
+    grid-area: subject;
+}
+#input-email {
+    grid-area: email;
+}
+#input-number {
+    grid-area: number;
+}
+#input-message {
+    grid-area: message;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.input-group label {
+    font-weight: 700px;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid yellow;
+}
+
+.input-group textarea:focus {
+    outline: none;
+    border-color: yellow;
+    box-shadow: 0 2px 10px yellow;
+}
+
+footer {
+    padding: 16px 128px;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+footer p {
+    color: white;
+    width: 50%;
+}
+
+.social-icon {
+    column-gap: 24px;
+    display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+    .service-detail {
+        gap: 24px;
+    }
+
+    .contact-detail {
+        gap: 24px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #header, #footer {
+        padding: 16px 32px;
+    }
+
+    section {
+        padding: 64px 32px;
+    }
+
+    #landing {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #landing > div {
+        width: 100%;
+    }
+
+    #about {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #about > div {
+        width: 100%;
+    }
+
+    .service-detail {
+        gap: 16px;
+    }
+
+    .contact-detail {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 64px;
+    }
+
+    .contact-detail form, .contact-detail > div {
+        width: 100%;
+    }
+}
